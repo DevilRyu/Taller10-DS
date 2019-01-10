@@ -16,6 +16,7 @@ public class Principal {
      */
     public static void main(String[] args) {
         Empresa miEmpresa = new Empresa();
+        //los clientes se deberian crear fuera al igual q los empleados
         miEmpresa.GuardarCliente("Alberto", "Castillo", "0987678711");
         miEmpresa.GuardarCliente("Ana", "Vera", "1780982211");
         miEmpresa.GuardarCliente("Diana", "Andrade", "1209339980");
