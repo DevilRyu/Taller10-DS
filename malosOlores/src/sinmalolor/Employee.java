@@ -3,39 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package conmalolor;
+package sinmalolor;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
 
-public class Employee
-{   
-
-    private String Nombre;
-    private String Apellido;
-    private String Cedula;
-    private String provincia;
-    private String pais;
-    private String ciudad;
-    private String direccion;
+public class Employee extends Persona{   
+    
     private final float rmu = (float) 386.0;
     //salario del employee
     private float salary;
     //porcentaje de bonus
     private float bonusPercentage;    
     //variable de tipo employeeType
-    private EmployeeType employeeType;    
+    private EmployeeType employeeType;
+    
+    public Employee(String Nombre, String Apellido, String Cedula) {
+        super(Nombre,Apellido,Cedula);
 
-    public Employee(float salary, float bonusPercentage, EmployeeType employeeType){        
-        this.salary = salary;        
-        this.bonusPercentage = bonusPercentage;        
-        this.employeeType = employeeType;
-        this.Nombre = "Descconocido";
-        this.Apellido = "Descconocido";
-        this.Cedula = "0000000000";
-        this.cambiarDireccion("Ecuador", "Gye", "Guayas", "ESPOL Prosperina");
+    }
+    //esta funcion debe ir en otra clase que se dedique a esto
+    public void manejarSalario(Employee emp, float salary, float bonusPercentage,EmployeeType employeeType){ 
+        
+        emp.setSalary(salary); 
+        emp.setBonusPercentage(bonusPercentage);
+        emp.setEmployeeType(employeeType);
+        emp.setLocation("Ecuador", "Gye", "Guayas", "ESPOL Prosperina");
     }
     //calcula el salario dependiendo del tipo de trabajador y entrega el décimo correspondiente cada 2 meses
     public float cs()
@@ -75,56 +70,28 @@ public class Employee
         }
         return 0.0F;
     }
-        /**
-     * @return the Nombre
-     */
-    public String getNombre() {
-        return Nombre;
+
+    public float getSalary() {
+        return salary;
     }
 
-    /**
-     * @param Nombre the Nombre to set
-     */
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setSalary(float salary) {
+        this.salary = salary;
     }
 
-    /**
-     * @return the Apellido
-     */
-    public String getApellido() {
-        return Apellido;
+    public float getBonusPercentage() {
+        return bonusPercentage;
     }
 
-    /**
-     * @param Apellido the Apellido to set
-     */
-    public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
+    public void setBonusPercentage(float bonusPercentage) {
+        this.bonusPercentage = bonusPercentage;
     }
 
-    /**
-     * @return the Cedula
-     */
-    public String getCedula() {
-        return Cedula;
+    public EmployeeType getEmployeeType() {
+        return employeeType;
     }
 
-    /**
-     * @param Cedula the Cedula to set
-     */
-    public void setCedula(String Cedula) {
-        this.Cedula = Cedula;
-    }
-    public String mostrarDireccion(){
-        String dir = pais + " - " + provincia + " - " + ciudad;
-        return  dir+ "\n" + direccion;
-    }
-    
-    public void cambiarDireccion(String nuevoPais, String ciudadnueva, String provinciaNueva, String direccionNueva){
-        pais = nuevoPais;
-        ciudad = ciudadnueva;
-        provincia = provinciaNueva;
-        direccion = direccionNueva;
+    public void setEmployeeType(EmployeeType employeeType) {
+        this.employeeType = employeeType;
     }
 }
