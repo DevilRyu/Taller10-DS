@@ -18,7 +18,7 @@ public class Persona {
     private String pais;
     private String ciudad;
     private String direccion;
-    private String telefono;
+
     
     public Persona (String Nombre, String Apellido, String Cedula) {
         this.Nombre = Nombre;
@@ -92,13 +92,5 @@ public class Persona {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
     }
 }

@@ -8,9 +8,6 @@ package conmalolor;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 public class Empresa {
     
     public List<Cliente> clientes;

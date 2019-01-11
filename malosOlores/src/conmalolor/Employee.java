@@ -62,7 +62,7 @@ public class Employee
         return 0.0F;
     }
     //calcula el bonus anual
-    public float CalculateYearBonus() 
+    public float CalculateYearBonus()
     {
         switch (employeeType)
         {
@@ -81,7 +81,6 @@ public class Employee
     public String getNombre() {
         return Nombre;
     }
-
     /**
      * @param Nombre the Nombre to set
      */
